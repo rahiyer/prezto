@@ -4,11 +4,16 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
-ZDOTDIR=/Users/riyer/local/dotfiles/shell
+ZDOTDIR=$HOME/local/dotfiles/shell
 ZPREZTO=prezto
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/$ZPREZTO/runcoms/zprofile" ]]; then
     source "${ZDOTDIR:-$HOME}/$ZPREZTO/runcoms/zprofile"
+fi
+
+# environment variables
+if [[ -s "${ZDOTDIR:-$HOME}/zsh_custom/env_variables.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/zsh_custom/env_variables.zsh"
 fi
 
