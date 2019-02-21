@@ -102,7 +102,8 @@ zstyle ':prezto:module:history-substring-search' globbing-flags ''
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 # zstyle ':prezto:module:prompt' theme 'pure'
-zstyle ':prezto:module:prompt' theme 'wikimatze'
+# zstyle ':prezto:module:prompt' theme 'wikimatze'
+zstyle ':prezto:module:prompt' theme 'ir'
 # zstyle ':prezto:module:prompt' theme 'nicoulaj'
 # zstyle ':prezto:module:prompt' theme 'kylewest'
 

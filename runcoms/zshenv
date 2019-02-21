@@ -12,3 +12,8 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/$ZPREZTO/runcoms/zpr
     source "${ZDOTDIR:-$HOME}/$ZPREZTO/runcoms/zprofile"
 fi
 
+# environment variables
+if [[ -s "${ZDOTDIR:-$HOME}/zsh_custom/env_variables.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/zsh_custom/env_variables.zsh"
+fi
+

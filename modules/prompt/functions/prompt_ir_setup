@@ -1,8 +1,8 @@
-function prompt_wikimatze_precmd {
+function prompt_ir_precmd {
   git-info
 }
 
-function prompt_wikimatze_setup {
+function prompt_ir_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent subst)
@@ -11,7 +11,7 @@ function prompt_wikimatze_setup {
   autoload -Uz add-zsh-hook
 
   # Add hook for calling git-info before each command.
-  add-zsh-hook precmd prompt_wikimatze_precmd
+  add-zsh-hook precmd prompt_ir_precmd
 
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
@@ -19,7 +19,7 @@ function prompt_wikimatze_setup {
       "%F{81}"  # Turquoise
       "%F{75}"  # Pastel Cyan
       "%F{215}" # Light Orange
-      "%F{166}" # Orange - not used
+      "%F{166}" # Orange
       "%F{119}" # Pastel Limegreen
     )
   else
@@ -48,11 +48,11 @@ function prompt_wikimatze_setup {
       'rprompt' '%A%B%S%C%D%U%u'
 
   # Define prompts.
-  # PROMPT="${_prompt_mseri_colors[3]}%n%f@${_prompt_mseri_colors[2]}%m%f ${_prompt_mseri_colors[5]}%~%f"'${(e)git_info[prompt]}'" » "
+  # PROMPT="%{$(iterm2_prompt_mark)%}${_prompt_mseri_colors[3]}%n%f@${_prompt_mseri_colors[2]}%m%f ${_prompt_mseri_colors[5]}%~%f"'${(e)git_info[prompt]}'" » "
   PROMPT="${_prompt_mseri_colors[5]}%~%f"'${(e)git_info[prompt]}'"
 » "
-  RPROMPT=''
+  RPROMPT='${_prompt_mseri_colors[4]}%(?..[%?] )'
 
 }
 
-prompt_wikimatze_setup "$@"
+prompt_ir_setup "$@"
